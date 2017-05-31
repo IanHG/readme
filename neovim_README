@@ -1,7 +1,33 @@
 Tags: NeoVIM, neovim
 
 #################################################################
-1) Ubuntu
+1) From Source
+#################################################################
+   a) Checkout:
+   	git clone git@github.com:neovim/neovim
+	cd neovim
+	git checkout v0.2.0   ( or other stable release )
+
+   b) Build with make:
+   	make deps        ( makes sure depencies are met )
+	make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=/opt/nvim/0.2.0" CMAKE_BUILD_TYPE=Release
+	make install
+	
+   c) Update system to use nvim instead of vi, vim, and editor.
+      I) Ubuntu
+         sudo update-alternatives --install /usr/bin/vi vi /opt/nvim/0.2.0/bin/nvim 60
+         sudo update-alternatives --config vi
+         sudo update-alternatives --install /usr/bin/vim vim /opt/nvim/0.2.0/bin/nvim 60 
+         sudo update-alternatives --config vim
+         sudo update-alternatives --install /usr/bin/editor editor /opt/nvim/0.2.0/bin/nvim 60 
+         sudo update-alternatives --config editor
+   
+   d) Setup vimrc.
+      NeoVIM takes all configuration from ~/.config/nvim,
+      so put vimrc in ~/.config/nvim/init.vim ( this is done automagically by your brilliant dotfiles installer ;) ).
+
+#################################################################
+2) Ubuntu (Will install low version!)
 #################################################################
    a) On ubuntu add repo:
       sudo add-apt-repository ppa:neovim-ppa/stable

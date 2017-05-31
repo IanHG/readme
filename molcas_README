@@ -15,3 +15,30 @@ export CC=mpicc
 export FC=mpifort
 export GAROOT=/home/ian/libs/ga-5.6-intel16/install
 cmake -DMPI=ON -DGA=ON -DLINALG=MKL -DCMAKE_INSTALL_PREFIX:PATH=$(pwd)/install ../
+
+###########################################################################################
+2) Running MOLCAS on slurm
+###########################################################################################
+
+Setup some environmental variables needed by molcas:
+   export MOLCAS=/home/ian/progs/molcas82/build_intel16    ( Molcas install dir )
+
+   export MOLCAS_MEM=20000       ( memory in MB )
+   export MOLCAS_NPROCS=5
+   export MOLCAS_WORKDIR=/scratch/$SLURM_JOBID
+
+When running under slurm setup the following:
+   #SBATCH --mem 120G
+   #SBATCH --nodes 1            # SLURM_JOB_NUM_NODES
+   #SBATCH --ntasks-per-node 20 # SLURM_NTASKS_PER_NODE
+   #SBATCH --cpus-per-task 1    # SLURM_NTASKS_PER_NODE
+
+Here --mem needs to be set larger than MOLCAS_MEM * MOLCAS_NPROCS !
+
+MPI:
+   MOLCAS will handle running using MPI by itself, so do NOT do a manual mpirun.
+   When running MOLCAS using mpi instead just run the molcas executable and it will
+   spawn mpi-processes according to MOLCAS_NPROCS.
+
+Threading:
+   Still an open question :D

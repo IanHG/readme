@@ -1,0 +1,45 @@
+###########################################################################################
+1) Setup
+###########################################################################################
+-------------------------------------------------------------------------------------------
+a) CMake
+-------------------------------------------------------------------------------------------
+   export CC=icc
+   export CXX=icpc
+   cmake -DCMAKE_INSTALL_PREFIX=/com/GROMACS/gromacs5.1.1_slurm -DGMX_SIMD=AVX_256 -DGMX_MPI=ON -DGMX_GPU=OFF -DCUDA_TOOLKIT_ROOT_DIR=/com/cuda/7.5.18/cuda -DGMX_BUILD_OWN_FFTW=ON ../
+
+-------------------------------------------------------------------------------------------
+b) Hand-optimization
+-------------------------------------------------------------------------------------------
+   FIGURE OUT HOW TO DO -xavx2 !!
+
+###########################################################################################
+2) Testing
+###########################################################################################
+-------------------------------------------------------------------------------------------
+a) Regression test
+-------------------------------------------------------------------------------------------
+   They can be obtained by
+   
+      git clone https://gerrit.gromacs.org/regressiontests
+   
+   or  for developers:
+   
+      git clone ssh://user@gerrit.gromacs.org/regressiontests
+   
+   To run the regressiontests the Gromacs binaries have to be in the path. Either by
+   
+      source /path/to/gromacs/bin/GMXRC
+   
+   or before installing (depending on the GROMACS version ) by
+   
+      export PATH=/path/to/build/src/kernel:/path/to/build/src/tools:/path/to/build/bin/:$PATH
+   
+   The tests are then run by
+      Serial:
+      ./gmxtest.pl all -noverbose
+   
+      Mpi:
+      ./gmxtest.pl all -np 4 -noverbose
+   
+   

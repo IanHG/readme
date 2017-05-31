@@ -1,0 +1,5 @@
+To update message of the day go to directory:
+   /etc/update-motd.d
+
+Here are all files that will be displayed as message of the day.
+Remember to make all files executable!! ;)

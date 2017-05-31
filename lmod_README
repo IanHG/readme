@@ -1,0 +1,24 @@
+Tags: Lmod, lmod, module
+
+###########################################################################################
+1) Install
+###########################################################################################
+Download:
+   https://github.com/TACC/Lmod
+
+Install:
+   ./configure --prefix=/opt
+
+
+Link profile:
+   bash:
+   $ ln -s /opt/apps/lmod/lmod/init/profile /etc/profile.d/z00_lmod.sh
+   
+   csh:
+   $ ln -s /opt/apps/lmod/lmod/init/cshrc   /etc/profile.d/z00_lmod.csh
+
+###########################################################################################
+2) Setup
+###########################################################################################
+Install modules in:
+   /opt/lmod/lmod/modulefiles

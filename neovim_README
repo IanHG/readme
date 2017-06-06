@@ -9,6 +9,8 @@ Tags: NeoVIM, neovim
 	   git checkout v0.2.0   ( or other stable release )
 
    b) Build with make:
+      !! package dependecies: cmake, automake, libtool, libtool-bin
+
    	make deps        ( makes sure depencies are met )
 	   make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=/opt/nvim/0.2.0" CMAKE_BUILD_TYPE=Release
 	   make install

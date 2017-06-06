@@ -5,13 +5,13 @@ Tags: NeoVIM, neovim
 #################################################################
    a) Checkout:
    	git clone git@github.com:neovim/neovim
-	cd neovim
-	git checkout v0.2.0   ( or other stable release )
+	   cd neovim
+	   git checkout v0.2.0   ( or other stable release )
 
    b) Build with make:
    	make deps        ( makes sure depencies are met )
-	make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=/opt/nvim/0.2.0" CMAKE_BUILD_TYPE=Release
-	make install
+	   make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=/opt/nvim/0.2.0" CMAKE_BUILD_TYPE=Release
+	   make install
 	
    c) Update system to use nvim instead of vi, vim, and editor.
       I) Ubuntu

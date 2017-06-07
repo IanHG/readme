@@ -25,8 +25,13 @@ Tags: NeoVIM, neovim
          sudo update-alternatives --config editor
    
    d) Setup vimrc.
-      NeoVIM takes all configuration from ~/.config/nvim,
-      so put vimrc in ~/.config/nvim/init.vim ( this is done automagically by your brilliant dotfiles installer ;) ).
+      I) 
+         NeoVIM takes all configuration from ~/.config/nvim,
+         so put vimrc in ~/.config/nvim/init.vim ( this is done automagically by your brilliant dotfiles installer ;) ).
+      II)
+         Make clipboard work properly by installing package: xclip
+
+
 
 #################################################################
 2) Ubuntu (Will install low version!)

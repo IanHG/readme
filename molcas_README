@@ -41,4 +41,5 @@ MPI:
    spawn mpi-processes according to MOLCAS_NPROCS.
 
 Threading:
-   Still an open question :D
+   Still an open question :D Probably only in MKL.
+      export MKL_NUM_THREADS=4

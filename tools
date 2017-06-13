@@ -21,6 +21,10 @@ screen
       screen                 : Start screen
       screen -list           : List all detached screens
       screen -r <screen-id>  : Re-attach to screen
+      screen -d <screen-id>  : De-attach screen
+
+      Hint: use following to re-attach to screen that is already attached (maybe to a terminal that timed out).
+         screen -rd <screen-id>
 
    b) Bindings:
       Ctrl+a ? : Get help page

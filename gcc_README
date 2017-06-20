@@ -1,0 +1,43 @@
+Tags: gcc, g++, gnu
+
+#################################################################
+1) Gnu FTP
+#################################################################
+   https://ftp.gnu.org/gnu/
+
+#################################################################
+2) Prerequisites
+#################################################################
+   a) The GNU Multiple Precision Arithmetic Library (GMP)
+      https://ftp.gnu.org/gnu/gmp/
+      
+      ./configure --enable-cxx --enable-fat --prefix=/comm/core/gmp/<version> 
+      make -j20
+      make check
+      make install
+
+   b) The MPFR library is a C library for multiple-precision floating-point computations with correct rounding.
+      https://ftp.gnu.org/gnu/mpfr/
+
+      ./configure --with-gmp=/comm/core/gmp/<version> --enable-gmp-internals --prefix=/comm/core/mpfr/<version>
+      make -j20
+      make check
+      make install
+
+   c) The GNU Multiple Precision Complex Library (MPC)
+      https://ftp.gnu.org/gnu/mpc/
+
+      ./configure --with-gmp=/comm/core/gmp/<version> --with-mpfr=/comm/core/mpfr/<version> --prefix=/comm/core/mpc/<version>
+      make -j20
+      make check
+      make install
+
+#################################################################
+3) GCC
+#################################################################
+   https://ftp.gnu.org/gnu/gcc/
+
+   ./configure --with-gmp=/comm/core/gmp/<version> --with-mpfr=/comm/core/mpfr/<version> --with-mpc=/comm/core/mpc/<version> --enable-lto --disable-multilib --prefix=/comm/core/gcc/<version>
+   make -j20
+   make check
+   make install

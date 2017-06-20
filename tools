@@ -1,0 +1,47 @@
+# Tags: tools
+ 
+A list of different tools I have found useful
+ 
+   List:
+      screen
+      watch
+ 
+###########################################################################################
+screen
+###########################################################################################
+   Description:
+      Run a kinda nohup terminal, which you can detach from. 
+      If logging out of the host, the screen session continues,
+      and you can connect back to host and re-attach again later.
+
+      To exit a screen session (terminating it) type 'exit'.
+      One must exit all screen windows to terminate the session.
+
+   a) Commands:
+      screen                 : Start screen
+      screen -list           : List all detached screens
+      screen -r <screen-id>  : Re-attach to screen
+      screen -d <screen-id>  : De-attach screen
+
+      Hint: use following to re-attach to screen that is already attached (maybe to a terminal that timed out).
+         screen -rd <screen-id>
+
+   b) Bindings:
+      Ctrl+a ? : Get help page
+      Ctrl+a c : Create window
+      Ctrl+a n : Next window
+      Ctrl+a d : Detach from screen
+      Ctrl+a k : Kill the screen session
+
+      Ctrl+a H : Log screen output
+
+
+   c) Resources:
+      https://www.rackaid.com/blog/linux-screen-tutorial-and-how-to/
+
+
+###########################################################################################
+watch
+###########################################################################################
+   Description:
+      Watch the output of a command, by running it in specific time intervals.

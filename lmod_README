@@ -1,4 +1,4 @@
-Tags: Lmod, lmod, module
+Tags: Lmod, lmod, module, modules
 
 ###########################################################################################
 1) Install
@@ -20,5 +20,6 @@ Link profile:
 ###########################################################################################
 2) Setup
 ###########################################################################################
-Install modules in:
-   /opt/lmod/lmod/modulefiles
+Install modules /opt/lmod/lmod/modulefiles,
+or in /opt/modulefiles,
+or setup a custom MODULEPATH in e.g. /etc/environment.

@@ -1,6 +1,17 @@
 Tags: OpenMPI, openmpi
 
-###########################################################################################
+#################################################################
+1) Download
+#################################################################
+   https://www.open-mpi.org/software/ompi/
+   https://www.open-mpi.org/software/ompi/v2.1/
+
+   # Download using command line:
+   curl -O https://www.open-mpi.org/software/ompi/v2.1/downloads/openmpi-2.1.1.tar.gz
+
+#################################################################
+2) Compilation
+#################################################################
 
 Log ind på Grendel-S
 

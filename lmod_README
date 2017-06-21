@@ -8,6 +8,8 @@ Download:
 
 Install:
    ./configure --prefix=/opt
+   make
+   make install
 
 
 Link profile:
@@ -18,7 +20,15 @@ Link profile:
    $ ln -s /opt/apps/lmod/lmod/init/cshrc   /etc/profile.d/z00_lmod.csh
 
 ###########################################################################################
-2) Setup
+2) Testing ( have not tried this yet)
+###########################################################################################
+   https://github.com/rtmclay/Lmod_test_suite
+   https://github.com/rtmclay/hermes
+
+   Install hermes test manager and run the Lmod_test_suite.
+
+###########################################################################################
+3) Setup
 ###########################################################################################
 Install modules /opt/lmod/lmod/modulefiles,
 or in /opt/modulefiles,

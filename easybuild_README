@@ -1,0 +1,8 @@
+Tags: easybuild, EasyBuild
+
+###########################################################################################
+1) Setup
+###########################################################################################
+   export PYTHONPATH="/comm/tools/EasyBuild/lib/python2.7/site-packages"
+   easy_install --prefix /comm/tools/EasyBuild easybuild
+   unset PYTHONPATH

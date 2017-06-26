@@ -1,0 +1,29 @@
+Tags: mopidy
+
+#################################################################
+1) Installation
+#################################################################
+sudo pip install Mopidy-Spotify
+sudo pip install Mopidy-Spotify-Web
+
+#################################################################
+2) Setup
+#################################################################
+Authenticate:
+https://www.mopidy.com/authenticate/
+
+In config file:
+[http]
+hostname = ::
+
+[spotify]
+enabled = true
+username = <get username from spotify account page>
+password = <get password from spotify account page>
+client_id = <get from authenticate page>
+client_secret = <get from authenticate page> 
+
+[spotify_web]
+enabled = true
+client_id = <get from authenticate page>
+client_secret = <get from authenticate page> 

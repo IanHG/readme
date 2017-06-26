@@ -1,0 +1,16 @@
+Tags: audio injector, sound card
+
+#################################################################
+1) Installation
+#################################################################
+
+Guide:
+http://www.flatmax.org/phpbb/viewtopic.php?f=5&t=3
+
+Install debiand package:
+http://www.flatmax.org/phpbb/download/file.php?id=2
+
+Run:
+audioInjector-setup.sh
+sudo apt-get install sox
+audioInjector-test.sh

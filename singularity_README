@@ -18,5 +18,8 @@ Tags: singularity, container
 #################################################################
 2) Usage
 #################################################################
+   *) Create image
+      sudo env "PATH=$PATH" singularity ubuntu.img 
+      
    *) Bootstrapping:
-      sudo env "PATH=$PATH" singularity bootstrap ubuntu.img Singularity
+      sudo env "PATH=$PATH" singularity bootstrap ubuntu.img ubuntu.def

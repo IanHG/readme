@@ -21,3 +21,7 @@ Tags: sci2u
       tu,just_created = TokenUser.objects.get_or_create(name='Hold 3')
    into opret_lan_hold.py, and run it.
       ./opret_lan_hold.py
+
+   Maybe run (not sure what this does :P, and not that I really care ;) ):
+      python manage.py makemigrations
+      python manage.py migrate

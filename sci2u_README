@@ -14,3 +14,10 @@ Tags: sci2u
 *) Other
 ###########################################################################################
    Make master and master/db.sqlite3 read-write-able for ALL!
+   
+   Create user database by inserting
+      tu,just_created = TokenUser.objects.get_or_create(name='Hold 1')
+      tu,just_created = TokenUser.objects.get_or_create(name='Hold 2')
+      tu,just_created = TokenUser.objects.get_or_create(name='Hold 3')
+   into opret_lan_hold.py, and run it.
+      ./opret_lan_hold.py

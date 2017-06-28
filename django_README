@@ -20,7 +20,7 @@ Tags: Apache, Apache2, Django, WSGI
          To deactivate again type:
             deactivate
 
-      d) Install django (and other needed packages) in virtual env
+      d) Install django (and other needed packages) in virtual env when it is activated
          pip install django    # or Django==<version>    (sci2u uses <version> = 1.8)
 
 

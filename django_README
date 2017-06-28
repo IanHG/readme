@@ -1,0 +1,29 @@
+Tags: Apache, Apache2, Django, WSGI
+
+
+###########################################################################################
+1) Install
+###########################################################################################
+   1) Install Apache and WSGI  (note here what version of python WSGI uses!!, i.e. install the correct WSGI ;) )
+      sudo apt-get update
+      sudo apt-get install python-pip apache2 libapache2-mod-wsgi
+
+   2) Install and setup python virtual environment
+      a) Install
+         sudo pip install virtualenv
+
+      b) Create
+         virtualenv <virtualenvdir>
+
+      c) Activate
+            source <virtualenvdir>/bin/activate
+         To deactivate again type:
+            deactivate
+
+      d) Install django (and other needed packages) in virtual env
+         pip install django    # or Django==<version>    (sci2u uses <version> = 1.8)
+
+
+###########################################################################################
+2) Setup
+###########################################################################################

@@ -9,6 +9,7 @@ Tags: sci2u
       image
       sympy
       matplotlib
+      bcrypt
 
 ###########################################################################################
 *) Other
@@ -26,3 +27,6 @@ Tags: sci2u
    ((After altering Django data base definition run this!)):
       python manage.py makemigrations
       python manage.py migrate
+
+   To NUKE Django database run:
+      python manage.py flush

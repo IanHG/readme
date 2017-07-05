@@ -14,3 +14,8 @@ PROCESS STATE CODES
        <   high-priority process
        N   low-priority task
        L   has pages locked into memory (for real-time and custom IO)
+
+
+      Kill all processes controlled by a user:
+
+         pkill -9 -u `id -u username`

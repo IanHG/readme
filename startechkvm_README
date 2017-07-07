@@ -1,3 +1,23 @@
 Tags: StarTech, KVM, crash cart
 
+# Source:
 https://ubuntuforums.org/showthread.php?t=2303035
+
+#################################################################
+1) Install
+#################################################################
+   Download drivers: 
+      https://sgcdn.startech.com/005329/media/sets/NOTECONS02_Drivers/NOTECONS02%20Linux%20Software%20Pack.zip
+   
+   # NOT NEEDED I THINK 
+   # Download libselinux.so.1 from Ubuntu 12.04 and put into /opt/usb-crash-cart-adapter/20170508/guts.
+   # NOT NEEDED I THINK 
+
+   Fix libstdc++:
+      sudo mv /opt/usb-crash-cart-adapter/20170508/guts/libstdc++.so.6 /opt/usb-crash-cart-adapter/20170508/guts/libstdc++.so.6.orig
+      sudo ln -s /usr/lib/x86_64-linux-gnu/libstdc++.so.6 /opt/usb-crash-cart-adapter/20170508/guts/libstdc++.so.6 
+
+   Install libwxgtk2.8:
+      sudo add-apt-repository ppa:nilarimogard/webupd8
+      sudo apt-get update
+      sudo apt-get install libwxgtk2.8

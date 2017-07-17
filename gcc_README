@@ -1,36 +1,48 @@
 Tags: gcc, g++, gnu
 
 #################################################################
-1) Gnu FTP
+1) Gnu FTP / Download gcc
 #################################################################
    https://ftp.gnu.org/gnu/
+   
+   Download GCC <version> :
+      wget ftp://gcc.gnu.org/pub/gcc/releases/gcc-<version>/gcc-<version>.tar.bz2
+
+   
 
 #################################################################
 2) Prerequisites
 #################################################################
-   a) The GNU Multiple Precision Arithmetic Library (GMP)
-      https://ftp.gnu.org/gnu/gmp/
-      
-      ./configure --enable-cxx --enable-fat --prefix=/comm/core/gmp/<version> 
-      make -j20
-      make check
-      make install
+   Automatically:
+      Download prerequisites automatically using script:
 
-   b) The MPFR library is a C library for multiple-precision floating-point computations with correct rounding.
-      https://ftp.gnu.org/gnu/mpfr/
+         contrib/donwload_prerequisites
 
-      ./configure --with-gmp=/comm/core/gmp/<version> --enable-gmp-internals --prefix=/comm/core/mpfr/<version>
-      make -j20
-      make check
-      make install
 
-   c) The GNU Multiple Precision Complex Library (MPC)
-      https://ftp.gnu.org/gnu/mpc/
+   Manually:
+      a) The GNU Multiple Precision Arithmetic Library (GMP)
+         https://ftp.gnu.org/gnu/gmp/
+         
+         ./configure --enable-cxx --enable-fat --prefix=/comm/core/gmp/<version> 
+         make -j20
+         make check
+         make install
 
-      ./configure --with-gmp=/comm/core/gmp/<version> --with-mpfr=/comm/core/mpfr/<version> --prefix=/comm/core/mpc/<version>
-      make -j20
-      make check
-      make install
+      b) The MPFR library is a C library for multiple-precision floating-point computations with correct rounding.
+         https://ftp.gnu.org/gnu/mpfr/
+
+         ./configure --with-gmp=/comm/core/gmp/<version> --enable-gmp-internals --prefix=/comm/core/mpfr/<version>
+         make -j20
+         make check
+         make install
+
+      c) The GNU Multiple Precision Complex Library (MPC)
+         https://ftp.gnu.org/gnu/mpc/
+
+         ./configure --with-gmp=/comm/core/gmp/<version> --with-mpfr=/comm/core/mpfr/<version> --prefix=/comm/core/mpc/<version>
+         make -j20
+         make check
+         make install
 
 #################################################################
 3) GCC
@@ -41,3 +53,30 @@ Tags: gcc, g++, gnu
    make -j20
    make check
    make install
+
+
+#################################################################
+4) Fra Niels Carl
+#################################################################
+- hent den nyeste snapshot af gcc, og gem den på /tmp
+    mkdir /tmp/G; cd /tmp/G
+    wget ftp://gcc.gnu.org/pub/gcc/snapshots/LATEST-6/gcc-6-20150802.tar.bz2
+
+- pak den ud.
+    tar jxvf gcc-6-20150802.tar.bz2
+
+- gå ned i det fremkomne dist-directory, og hent de nødvendige ekstra-pakker
+med:
+    cd gcc-6-20150802
+    contrib/download_prerequisites
+
+- lav build-directory parallelt med dist-directory, og gå derned
+    mkdir ../build; cd ../build
+    ../gcc-6-20150802/configure --prefix=/com/gcc/6
+--with-local-prefix=/com/gcc/6 --enable-bootstrap --enable-shared
+--enable-threads=posix --disable-multilib
+
+- make -j4
+  (tager laaaaaaaang tid)
+
+- make install

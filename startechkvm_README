@@ -21,3 +21,30 @@ https://ubuntuforums.org/showthread.php?t=2303035
       sudo add-apt-repository ppa:nilarimogard/webupd8
       sudo apt-get update
       sudo apt-get install libwxgtk2.8
+
+#################################################################
+2) ON RASPBERRY PI TRY:
+#################################################################
+# SOURCE:
+https://taoofmac.com/space/blog/2015/02/27/2210
+
+# add support for i386 binaries and user-level QEMU
+$ sudo apt-get install qemu-user binfmt-support
+
+# add extra repos for i386
+# (I had these handy)
+$ sudo tee /etc/apt/sources.list.d/i386.list 
+deb http://mirrors.digitalocean.com/ubuntu/ trusty main restricted universe multiverse
+deb http://mirrors.digitalocean.com/ubuntu/ trusty-updates main restricted universe multiverse
+deb http://mirrors.digitalocean.com/ubuntu/ trusty-security main restricted universe multiverse
+deb http://mirrors.digitalocean.com/ubuntu/ trusty-backports main restricted universe multiverse
+^D
+
+# update your package list
+$ sudo apt-get update
+
+# install i386 versions of Sublime dependencies, including libc, X11, the works...
+$ sudo apt-get install libc6:i386 libstdc++6:i386 libglib2.0-0:i386 libX11-6:i386 libpangocairo-1.0-0:i386 libgtk2.0-0:i386
+
+# Run Sublime Text
+$ qemu-i386 sublime_text 

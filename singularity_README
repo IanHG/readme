@@ -25,3 +25,10 @@ Tags: singularity, container
       sudo env "PATH=$PATH" singularity bootstrap ubuntu.img ubuntu.def
 
 
+#################################################################
+3) Errors
+#################################################################
+
+If you see the following, you probably need to install singularity as ROOT! ;) :
+   ERROR  : Could not create /dev/loop8: Permission denied
+   ABORT  : Retval = 255

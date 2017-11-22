@@ -1,0 +1,30 @@
+Tags: SLUB, SLAB, SLOB
+
+#################################################################
+0) Resources
+#################################################################
+# https://events.linuxfoundation.org/sites/events/files/slides/slaballocators.pdf
+Talks a little about differences between the Linux kernel slab allocaters.
+
+#################################################################
+1) SLUB: Unable to allocate memory on node -1 (gfp=0x20) 
+   and
+   SLUB: Unable to allocate memory on node -1 (gfp=0x8020)
+#################################################################
+   
+   # http://samba.2283325.n4.nabble.com/KVM-VM-error-SLUB-unable-to-allocate-memory-on-node-1-td4344609.html
+   Says to check integrity of swap partition
+
+      mkswap -c /dev/<swapdevice>
+   
+   # https://stackoverflow.com/questions/43405813/linux-slub-unable-to-allocate-memory-on-node
+   Answer says to check swap partition, and if that is OK, a kernel upgrade might be needed!
+   To upgrade kernel try to follow steps given here:
+      
+      https://www.tecmint.com/install-upgrade-kernel-version-in-centos-7/
+
+
+   # https://bugs.schedmd.com/show_bug.cgi?id=3648
+   Mentions the (gfp=0x8020) error, and says it might have been a cgroup subsystem error in SLURM. 
+   It should have been fixed in slurm 16.05.7.
+

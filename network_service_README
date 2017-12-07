@@ -1,0 +1,36 @@
+
+https://serverfault.com/a/690401/317105
+
+If network fails to start:
+
+   $ systemctl status network.service
+   * network.service - LSB: Bring up/down networking
+   Loaded: loaded (/etc/rc.d/init.d/network)
+   Active: failed (Result: exit-code) since Mon 2017-11-27 11:49:47 CET; 7s ago
+     Docs: man:systemd-sysv-generator(8)
+   Process: 2349 ExecStart=/etc/rc.d/init.d/network start (code=exited, status=1/FAILURE)
+   CGroup: /system.slice/network.service
+           `-1367 /sbin/dhclient -H s82n26 -1 -q -lf /var/lib/dhclient/dhclie...
+
+
+First kill dhclient:
+
+   $ ps -ef | grep dhc
+   root      1367     1  0 11:43 ?        00:00:00 /sbin/dhclient -H s82n26 -1 -q -lf /var/lib/dhclient/dhclient-7c051a09-4092-4fdd-9e3b-e93039658a88-eno2.lease -pf /var/run/dhclient-eno2.pid eno2
+   ian       2605  2011  0 11:53 ttyS0    00:00:00 grep --color=auto dhc
+   $ kill -9 1367
+
+Then restart network service:
+
+   $ systemctl stop network
+   $ systemctl start network
+   $ systemctl status network.service
+   * network.service - LSB: Bring up/down networking
+   Loaded: loaded (/etc/rc.d/init.d/network)
+   Active: active (running) since Mon 2017-11-27 11:54:24 CET; 10s ago
+     Docs: man:systemd-sysv-generator(8)
+   Process: 2661 ExecStart=/etc/rc.d/init.d/network start (code=exited, status=0/SUCCESS)
+   CGroup: /system.slice/network.service
+           `-2861 /sbin/dhclient -H s82n26 -1 -q -lf /var/lib/dhclient/dhclie...
+
+

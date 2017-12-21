@@ -33,3 +33,16 @@ Link profile:
 Install modules /opt/lmod/lmod/modulefiles,
 or in /opt/modulefiles,
 or setup a custom MODULEPATH in e.g. /etc/environment.
+
+###########################################################################################
+4) Debugging LMOD scripts
+###########################################################################################
+
+To print from LMOD scripts use io.stderr to write to terminal:
+
+   io.stderr:write("LAPACK ",installDir,"\n")
+
+###########################################################################################
+5) Dependent modules
+###########################################################################################
+http://lmod.readthedocs.io/en/latest/098_dependent_modules.html

@@ -1,0 +1,20 @@
+https://www.hoffman2.idre.ucla.edu/access/x11_forwarding/
+
+#################################################################
+1) Login
+#################################################################
+The Apple terminal application can be used to connect to the cluster. Specify -Y, not -X, in the ssh command to enable X11 Forwarding (as by default, a mac assumes that an -X connection is untrusted):
+
+    ssh -Y login_id@hoffman2.idre.ucla.edu
+
+where login_id is replaced by your cluster user name. Alternatively, you can override the ssh default for your hoffman2 session creating a $HOME/ssh/config file similar to the one shown for linux logins.
+Notes for XQuartz users
+
+#################################################################
+2) IF IT DOESN'T WORK: DO THIS! :D
+#################################################################
+Indirect GLX was disabled by default in Xorg 1.17, starting from XQuartz version 2.7.9, to enable indirect GLX and to allow remote visualization on the cluster you will have to issue at the terminal command prompt of your mac:
+
+    defaults write org.macosforge.xquartz.X11 enable_iglx -bool true
+
+ See About X11 and OS X Mountain Lion from http://support.apple.com/kb/HT5293. For Mac OS X 10.4 (Tiger): X11 should be installed from the OS media and manually started.
